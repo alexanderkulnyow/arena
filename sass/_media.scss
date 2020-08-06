@@ -1,0 +1,132 @@
+/* Smartphones (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 280px) and (max-device-width: 480px) {
+  .carousel__description h2 {
+    font-size: 20px;
+  }
+  .carousel__description {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  h2, h3 {
+    /*font-size: 1.5rem; !important;*/
+  }
+
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 992px) {
+  .class-menu-ul {
+    font-size: 12px;
+  }
+  .page__contacts-list {
+    font-size: 12px;
+  }
+}
+
+/* Smartphones (landscape) ----------- */
+@media only screen and (min-width: 321px) {
+  /* Styles */
+}
+
+@media only screen and (min-width: 768px){
+  .product-name, .product-date, .product-price, .product-quantity, .product-subtotal {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 500px){
+  .h1_with_file {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .h1_with_button{
+    margin: 30px 0;
+  }
+  .card-img-overlay > h3.card-title {
+    font-size: 1em;
+    top: 60%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .cart__item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-name, .product-date, .product-price, .product-quantity, .product-subtotal {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .carousel, .carousel__filter {
+    height: auto;
+  }
+
+  .carousel img {
+    transform: translateY(0);
+  }
+
+  footer .site__branding img {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  //.logo p {
+  //  top: 0;
+  //  position: relative;
+  //  margin-bottom: 0;
+  //}
+
+}
+@media only screen and (max-width: 992px) {
+  .orders__row{
+    flex-direction: column;
+  }
+  .order__item{
+    padding: 15px 0;
+  }
+  .order__item>a{
+    padding: 0;
+  }
+}
+@media only screen and (max-width: 1160px) {
+  .carousel img {
+    position: relative;
+    transform: translateY(0);
+  }
+
+
+}
+
+/* iPads (portrait and landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  /* Styles */
+}
+
+/* iPads (landscape) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
+  html {
+    font-size: 10px;
+  }
+}
+
+/* iPads (portrait) ----------- */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) {
+  html {
+  }
+}
+
+/* Desktops and laptops ----------- */
+@media only screen and (min-device-width: 1024px) and (max-width: 1224px) {
+  html {
+
+  }
+}
+
+/* iPhone 4 ----------- */
+@media only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+  /* Styles */
+}

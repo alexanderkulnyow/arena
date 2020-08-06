@@ -1,0 +1,30 @@
+.orders__column
+  margin-top: 20px
+  display: flex
+  flex-direction: column
+
+.orders__row
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
+  background: $bg_2
+  padding: 10px 20px 10px 20px
+  border: 1px solid $bg_1
+  a
+    color: $green
+
+  .product-remove
+    align-self: center
+    padding: 0 40px 0 20px
+
+    span
+      //color: red
+      //border: 2px solid red
+      &:before
+        color: $green
+        padding: 3px 2px 2px 2px
+        border: 2px solid $green
+          radius: 20px
+
+

@@ -1,0 +1,64 @@
+#page
+  display: flex
+  flex-direction: column
+  min-height: 96.7vh
+header#masthead
+  position: fixed
+  left: 0
+  top: 0
+  right: 0
+  width: 100vw
+  background: $gradient__navbar
+  flex: 0 0 auto
+  z-index: 999
+.site__header
+  display: flex
+  flex-direction: row
+  justify-content: space-around
+  align-items: center
+  height: 100px
+  z-index: 999
+
+.site__branding, .site__login
+  //flex: 1
+.site__branding
+  display: block
+  overflow: hidden
+  padding-left: 0
+  //margin-bottom: 15px
+  z-index: 1
+  width: 100%
+  img
+
+    display: block
+    margin: 0
+    width: auto
+    height: 60px
+  p
+    text-transform: uppercase
+    //position: absolute
+    right: 6px
+    top: 15px
+
+    font-size: 10.5px
+
+.site__login
+  position: relative
+  justify-content: flex-end
+  display: flex
+  flex-direction: row
+  a
+    padding-right: 15px
+    color: $white
+    &:visited
+      color: $white
+  .fa
+    bottom: 0
+
+.site__content
+  display: block
+  min-height: 100%
+  flex: 1 0 auto
+
+
+

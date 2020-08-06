@@ -1,0 +1,75 @@
+.badge-ticket
+  display: flex
+  flex-direction: column
+  position: relative
+  width: 70px
+  height: 70px
+  margin-bottom: 10px
+
+.badge-ticket__small
+  display: flex
+  flex-direction: column
+  position: absolute
+  bottom: 0
+  right: 5%
+  width: 50px
+  height: 50px
+  transform: translateY(50%)
+  .bagre-right
+    position: absolute
+    width: 50%
+    height: 100%
+    background: radial-gradient(circle at 0 50%, rgba(204,0,0,0) 7px, $orange 7px)
+    z-index: 1
+
+  .bagre-left
+    position: absolute
+    width: 50%
+    right: 0
+    height: 100%
+    background: radial-gradient(circle at 100% 50%, rgba(204,0,0,0) 7px, $orange 7px)
+    z-index: 1
+
+
+
+.badge-ticket-bottom, .badge-ticket-top
+  position: relative
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+  padding: 0
+  top: 0
+  bottom: 0
+  span
+    display: block
+    font-size: 18px
+    margin: 0
+    padding: 0
+
+.badge-ticket-bottom
+  right: 0
+  height: 50%
+  width: 100%
+  z-index: 2
+.badge-ticket-top
+  left: 0
+  height: 50%
+  width: 100%
+  z-index: 2
+
+.bagre-right
+  position: absolute
+  width: 50%
+
+  height: 100%
+  background: radial-gradient(circle at 0 50%, rgba(204,0,0,0) 10px, $orange 10px)
+  z-index: 1
+
+.bagre-left
+  position: absolute
+  width: 50%
+  right: 0
+  height: 100%
+  background: radial-gradient(circle at 100% 50%, rgba(204,0,0,0) 10px, $orange 10px)
+  z-index: 1

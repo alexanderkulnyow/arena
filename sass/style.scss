@@ -1,0 +1,104 @@
+/*!
+Theme Name: arena
+Theme URI: https://dds.by/
+Author: Alexander Kulnyow /Vitebsk/
+Author URI: http://dds.by/
+Description: Description
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: arena
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+arena is based on Underscores https://dds.by/, (C) 2012-2017 Automattic, Inc.
+Underscores is distributed under the terms of the GNU GPL v2 or later.
+*/
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+@import "../../../../env/node_modules/normalize.css/normalize";
+@import "../../../../env/node_modules/bootstrap/scss/bootstrap";
+//@import "../../../../env/node_modules/font-awesome/scss/font-awesome";
+@import "../../../../env/node_modules/hamburgers/_sass/hamburgers/hamburgers";
+
+@import "abstract/colors";
+@import "abstract/mixins";
+@import "base/fonts";
+
+@import "component/carousel";
+@import "component/card";
+@import "component/buttons";
+@import "component/badges";
+@import "component/navigation";
+@import "component/breadcrumbs";
+@import "component/timetable";
+@import "component/form";
+@import "component/yith";
+
+@import "layout/header";
+@import "layout/home";
+@import "layout/tickets";
+@import "layout/contacts";
+@import "layout/sf";
+@import "layout/footer";
+@import "layout/modals";
+
+@import "pages/cart-new";
+@import "pages/orders-new";
+@import "pages/my-account";
+@import "pages/contacts";
+@import "pages/checkout";
+@import "pages/photo";
+@import "pages/menu";
+@import "pages/single-prod";
+@import "pages/404";
+
+@import "media";
+
+body {
+  background: $bg_1;
+}
+.photo {
+  margin-top: 10px;
+  margin-bottom: 10px;
+
+}
+//#content {
+//  padding-bottom: 20px;
+//}
+$slick-prev-character:\f106;
+$slick-next-character:\f106;
+.slick-arrow {
+  width: 20px !important;
+  height: auto !important;
+  color: black;
+  z-index: 49;
+  cursor: pointer;
+}
+.date_panel, .service_message {
+  display: none !important;
+}
+
+.slick-prev {
+  left: 10px;
+}
+.slick-prev:before {
+  font-family: dashicons;
+  content: "\f341";
+  font-size: 36px !important;
+}
+.slick-next {
+  right: 20px;
+}
+.slick-next:before {
+  font-family: dashicons;
+  content: "\f345";
+  font-size: 36px !important;
+}
+
+
+

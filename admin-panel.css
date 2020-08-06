@@ -1,0 +1,19 @@
+#sub-accordion-section-arena_shedule {
+  display: -webkit-box !important;
+  display: -webkit-flex !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: horizontal !important;
+  -webkit-box-direction: normal !important;
+  -webkit-flex-direction: row !important;
+      -ms-flex-direction: row !important;
+          flex-direction: row !important;
+  -webkit-flex-wrap: wrap !important;
+      -ms-flex-wrap: wrap !important;
+          flex-wrap: wrap !important; }
+  #sub-accordion-section-arena_shedule li {
+    width: 50%; }
+    #sub-accordion-section-arena_shedule li:first-child {
+      width: 100%; }
+
+/*# sourceMappingURL=admin-panel.css.map */
