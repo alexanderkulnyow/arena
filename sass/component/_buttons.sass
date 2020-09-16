@@ -106,6 +106,10 @@
     text-decoration: none
 
 .woocommerce-message
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items: center
   width: 100%
   background: $green
   color: black
@@ -114,10 +118,13 @@
   a
     color: black
     border: none
+    border: 1px solid black
+    margin-top: 0
     &:hover
-      text-decoration: underline
-      border: none
-      color: black
+      text-decoration: none
+      color: $bg_2
+      border-color: $bg_2
+      //background-color: $bg_2
 .maincontent__button
   position: absolute
   bottom: 10vh

@@ -10954,6 +10954,23 @@ i {
     text-decoration: none; }
 
 .woocommerce-message {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 100%;
   background: #A7D231;
   color: black;
@@ -10961,11 +10978,13 @@ i {
   padding: 15px; }
   .woocommerce-message a {
     color: black;
-    border: none; }
+    border: none;
+    border: 1px solid black;
+    margin-top: 0; }
     .woocommerce-message a:hover {
-      text-decoration: underline;
-      border: none;
-      color: black; }
+      text-decoration: none;
+      color: #451066;
+      border-color: #451066; }
 
 .maincontent__button {
   position: absolute;
