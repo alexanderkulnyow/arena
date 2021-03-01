@@ -17,3 +17,5 @@ jQuery(document).ready(function ($) {
         }
     });
 });
+
+//# sourceMappingURL=magnific-popup-init.js.map

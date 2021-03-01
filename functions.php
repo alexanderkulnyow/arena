@@ -1,5 +1,6 @@
 <?php
 /**
+/**
  * arena functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
@@ -95,6 +96,7 @@ function arena_widgets_init() {
 }
 
 
+
 add_action( 'wp_enqueue_scripts', 'arena_scripts' );
 function arena_scripts() {
 //	styles
@@ -113,6 +115,9 @@ function arena_scripts() {
 	}
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
+		wp_enqueue_style( 'arena__popup-style', get_template_directory_uri() . '/libs/magnific-popup/magnific-popup.css', array(), '1.42' );
+		wp_enqueue_script( 'arena__popup', get_template_directory_uri() . '/libs/magnific-popup/jquery.magnific-popup.min.js', array( 'jquery' ), '1.0', true );
+		wp_enqueue_script( 'arena__popup_init', get_template_directory_uri() . '/js/magnific-popup-init.js', array( 'arena__popup' ), '1.0', true );
 	}
 	if ( is_category( array( 'menu', 'beverages', 'banketnoe-menu' ) ) ) {
 		wp_enqueue_script( 'arena-mixitup', get_template_directory_uri() . '/libs/mixitup/mixitup.min.js', array(), '1.1', true );
@@ -124,14 +129,21 @@ function arena_scripts() {
 		wp_enqueue_script( 'arena__popup', get_template_directory_uri() . '/libs/magnific-popup/jquery.magnific-popup.min.js', array( 'jquery' ), '1.0', true );
 		wp_enqueue_script( 'arena__popup_init', get_template_directory_uri() . '/js/magnific-popup-init.js', array( 'arena__popup' ), '1.0', true );
 	}
+	if ( is_single() ) {
+		wp_enqueue_style( 'arena__popup-style', get_template_directory_uri() . '/libs/magnific-popup/magnific-popup.css', array(), '1.42' );
+		wp_enqueue_script( 'arena__popup', get_template_directory_uri() . '/libs/magnific-popup/jquery.magnific-popup.min.js', array( 'jquery' ), '1.0', true );
+		wp_enqueue_script( 'arena__popup_init', get_template_directory_uri() . '/js/magnific-popup-init.js', array( 'arena__popup' ), '1.0', true );
+	}
 
 	wp_enqueue_style( 'arena-style', get_stylesheet_uri(), array(), '1.782' );
 	wp_enqueue_script( 'index', get_template_directory_uri() . '/js/index.js', array(), '1.63', true );
 }
-function arena_adminpanel_styles(){
+
+function arena_adminpanel_styles() {
 	wp_enqueue_style( 'style-admin-panel', get_template_directory_uri() . '/admin-panel.css' );
 
 }
+
 add_action( 'admin_enqueue_scripts', 'arena_adminpanel_styles' );
 function arena_checker_user_css() {
 
@@ -206,21 +218,18 @@ if ( class_exists( 'WooCommerce' ) ) {
 function portfolio_post_thumbnail() {
 	if ( has_post_thumbnail() ) {
 		$thumb = wp_get_attachment_image_src( get_post_thumbnail_id(), 'thumbnail' );
-
 		?>
-
         <a href="<?php the_permalink(); ?>" rel="nofollow noopener">
             <div class="col-12">
                 <div class="card photo-card bg-dark text-white embed-responsive embed-responsive-1by1 mb-0">
                     <img class="photo-img-top img-fluid embed-responsive-item" src="<?php echo $thumb[0] ?>"
-                         alt="" title="Клуб танцы"/>
+                         alt="Ресторан-клуб Танцы" title="<?php the_title_attribute( $args ); ?>"/>
                     <div class="card-img-overlay">
                         <h3 class="card-title" itemprop="name"><?php echo get_the_title(); ?></h3>
                     </div>
                 </div>
             </div>
         </a>
-
 
 		<?php
 	}
@@ -512,4 +521,26 @@ function wpb_image_editor_default_to_gd( $editors ) {
 }
 
 add_filter( 'wp_image_editors', 'wpb_image_editor_default_to_gd' );
+
+//
+//add_action('after_setup_theme', function() {
+//	echo '<pre>';
+//	print_r(wp_get_additional_image_sizes());
+//	echo '</pre>';
+//	die();
+//}, 999);
+//add_action( 'woocommerce_checkout_billing', function(){
+//	woocommerce_form_field();
+//} );
+//
+//function misha_one_more_field(){
+//
+//	woocommerce_form_field( 'vat', array(
+//		'type'        => 'text',
+//		'required'    => true,
+//		'label'       => 'VAT',
+//		'description' => 'Please enter your VAT',
+//	), $checkout->get_value( 'vat' ) );
+//
+//}
 

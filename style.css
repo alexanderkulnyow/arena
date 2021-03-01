@@ -11426,6 +11426,19 @@ textarea {
   padding: 5px 0 15px 0px !important;
   margin: 5px 0 0px 0px !important; }
 
+.woocommerce-billing-fields .form-row {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: normal !important;
+  -webkit-flex-direction: column !important;
+      -ms-flex-direction: column !important;
+          flex-direction: column !important; }
+  .woocommerce-billing-fields .form-row input {
+    width: 300px; }
+
 input.search_ticket_number {
   width: 50%;
   float: left;

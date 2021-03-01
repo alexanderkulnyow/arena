@@ -25,7 +25,7 @@ get_header();
 			woocommerce_breadcrumb();
 			?>
             <header class="page-header">
-                <h1 class="" style="margin-top: 20px; margin-bottom: 20px;">Фотоотчеты мероприятий</h1>
+                <h1 class="" style="margin-top: 20px; margin-bottom: 20px;"><?php single_cat_title();?></h1>
             </header><!-- .page-header -->
             <div class="col-12 order-md-0 order-1">
                 <div class="row">

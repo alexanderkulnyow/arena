@@ -126,7 +126,7 @@
 
     <div id="content" class="front__content">
 		<?php else : ?>
-        <div id="content" class="site__content">
+        <div id="content" class="site__content" style="margin-top: 0px;">
 			<?php
 			//	        woocommerce_breadcrumb();
 			endif; ?>

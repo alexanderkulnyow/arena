@@ -11,22 +11,36 @@
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
 function arena_customize_register( $wp_customize ) {
+	$transport = 'postMessage';
+	$setting   = 'b_menu';
 
-//	$wp_customize->add_section( 'arena__schedule',
-//		array(
-//			'title'      => __( 'Расписание', 'arena' ),
-//			'priority'   => 100,
-//			'capability' => 'edit_theme_options'
-//		)
-//	);
-//	$days = array( 'mon_st', 'mon_end', 'tue_st', 'tue_end', 'wed_st', 'wed_end', 'thu_st', 'thu_end', 'fri_st', 'fri_end', 'sat_st', 'sat_end', 'sun_st', 'sun_end');
-//	foreach ( $days as $day ) {
-//		$wp_customize->add_setting( arena__schedule, array(
-//			'default'           => 'Редактируется в настройках темы.',
-//			'sanitize_callback' => 'sanitize_textarea_field',
-//			'transport'         => 'postMessage'
-//		) );
-//	}
+	$wp_customize->add_section(
+		'banket',
+		array(
+			'title'      => __( 'Банкетное меню', 'arena' ),
+			'priority'   => 102,                   // приоритет расположения
+			'capability' => 'edit_theme_options'
+		) );
+
+	$wp_customize->add_setting(
+		'file_choiser',
+		array(
+			'default'      => '',
+			'transport' => $transport
+		) );
+//
+	$wp_customize->add_control(
+		new WP_Customize_Upload_Control(
+			$wp_customize,
+			'file_choiser',
+			array(
+				'label'    => 'Фон сайта',
+				'settings' => 'file_choiser',
+				'section'  => 'banket'
+			)
+		)
+	);
+
 
 	$wp_customize->add_section(
 		'arena_shedule',
@@ -55,7 +69,7 @@ function arena_customize_register( $wp_customize ) {
 	/*
 	 * Add custom setings
 	 * */
-	$i=0;
+	$i      = 0;
 	$r_days = array(
 		'ПН. начало',
 		'ПН. конец',
@@ -72,7 +86,22 @@ function arena_customize_register( $wp_customize ) {
 		'ВС. начало',
 		'ВС. конец',
 	);
-	$days = array( 'mon_st', 'mon_end', 'tue_st', 'tue_end', 'wed_st', 'wed_end', 'thu_st', 'thu_end', 'fri_st', 'fri_end', 'sat_st', 'sat_end', 'sun_st', 'sun_end');
+	$days   = array(
+		'mon_st',
+		'mon_end',
+		'tue_st',
+		'tue_end',
+		'wed_st',
+		'wed_end',
+		'thu_st',
+		'thu_end',
+		'fri_st',
+		'fri_end',
+		'sat_st',
+		'sat_end',
+		'sun_st',
+		'sun_end'
+	);
 	foreach ( $days as $day ) {
 
 		$wp_customize->add_setting( $day, array(
@@ -84,7 +113,7 @@ function arena_customize_register( $wp_customize ) {
 		$wp_customize->add_control( $day, array(
 			'section' => 'arena_shedule',
 			'type'    => 'time',
-			'label'   => $r_days[$i++],
+			'label'   => $r_days[ $i ++ ],
 		) );
 
 		$wp_customize->selective_refresh->add_partial( $day, array(
